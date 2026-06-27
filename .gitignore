@@ -1,0 +1,60 @@
+# SCHF SDK - keep contracts only
+
+# Dependencies/build artifacts
+node_modules/
+vendor/
+dist/
+build/
+coverage/
+
+# Environment and credentials
+.env
+.env.*
+*.local
+*.key
+*.pem
+*.crt
+*.pfx
+*.p12
+secrets.json
+credentials.json
+auth.json
+
+# Real client data and backups - never commit
+*.FDB
+*.fdb
+*.FBK
+*.fbk
+*.GDB
+*.gdb
+*.SQL
+*.sql
+*.sqlite
+*.db
+*.mdb
+*.accdb
+*.rar
+*.RAR
+*.zip
+*.ZIP
+*.7z
+*.enc
+*.ENC
+**/backup*/
+**/dumps*/
+**/dump*/
+
+# Logs/temp
+*.log
+*.tmp
+*.bak
+*.cache
+
+# OS/IDE
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo

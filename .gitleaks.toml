@@ -1,0 +1,26 @@
+# Gitleaks Configuration - SCHF SDK
+
+[allowlist]
+  description = "SDK contract allowlist"
+  paths = [
+    '''\.gitleaks\.toml$''',
+    '''schemas/.*\.schema\.json$''',
+  ]
+
+[[rules]]
+  id = "generic-api-key"
+  description = "Generic API Key"
+  regex = '''(?i)(api[_-]?key|apikey|api_secret|secret_key|access_key|auth_token)['\"]?\s*[:=]\s*['\"]([a-zA-Z0-9+/=\-_]{16,})['\"]'''
+  tags = ["key", "API", "generic"]
+
+[[rules]]
+  id = "private-key"
+  description = "Private Key"
+  regex = '''-----BEGIN (RSA|DSA|EC|PGP|OPENSSH) PRIVATE KEY-----'''
+  tags = ["key", "Private"]
+
+[[rules]]
+  id = "database-password"
+  description = "Database Password"
+  regex = '''(?i)(DB_PASSWORD|MYSQL_PASSWORD|REDIS_PASSWORD|POSTGRES_PASSWORD)['\"]?\s*[:=]\s*['\"]([^\s'\"]{8,})['\"]'''
+  tags = ["password", "Database"]
